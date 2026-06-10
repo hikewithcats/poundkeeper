@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Pound Keeper | Patrick Hourihan</title>
+  <meta name="description" content="The personal headquarters of Patrick Hourihan: pound keeper, animal advocate, AI builder, and creator. For the strays, the builders, and the ones finding their way home.">
+  <meta property="og:title" content="The Pound Keeper | Patrick Hourihan">
+  <meta property="og:description" content="Lost pets. Strange tools. Second chances.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://poundkeeper.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+  <!-- Reusable SVG symbols -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="paw" viewBox="0 0 64 64">
+        <ellipse cx="32" cy="42" rx="13" ry="11"/>
+        <ellipse cx="14" cy="28" rx="6" ry="8" transform="rotate(-18 14 28)"/>
+        <ellipse cx="25" cy="18" rx="6" ry="8" transform="rotate(-6 25 18)"/>
+        <ellipse cx="39" cy="18" rx="6" ry="8" transform="rotate(6 39 18)"/>
+        <ellipse cx="50" cy="28" rx="6" ry="8" transform="rotate(18 50 28)"/>
+      </symbol>
+      <symbol id="tag" viewBox="0 0 64 64">
+        <path d="M32 4 C45 4 54 13 54 26 C54 44 32 60 32 60 C32 60 10 44 10 26 C10 13 19 4 32 4 Z M32 12 A5 5 0 1 0 32 22 A5 5 0 1 0 32 12 Z" fill-rule="evenodd"/>
+      </symbol>
+      <symbol id="cat" viewBox="0 0 64 64">
+        <path d="M14 54 C12 40 14 30 20 24 L16 10 L26 18 C30 16 34 16 38 18 L48 10 L44 24 C50 30 52 40 50 54 Z"/>
+      </symbol>
+      <symbol id="robot" viewBox="0 0 64 64">
+        <rect x="14" y="20" width="36" height="28" rx="5"/>
+        <rect x="29" y="8" width="6" height="10" rx="3"/>
+        <circle cx="32" cy="6" r="4"/>
+        <circle cx="25" cy="32" r="4" fill="var(--ink)"/>
+        <circle cx="39" cy="32" r="4" fill="var(--ink)"/>
+        <rect x="22" y="41" width="20" height="3" rx="1.5" fill="var(--ink)"/>
+        <rect x="6" y="26" width="6" height="14" rx="3"/>
+        <rect x="52" y="26" width="6" height="14" rx="3"/>
+      </symbol>
+      <symbol id="pen" viewBox="0 0 64 64">
+        <path d="M46 6 L58 18 L24 52 L8 56 L12 40 Z M12 40 L24 52" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="box" viewBox="0 0 64 64">
+        <path d="M32 6 L56 18 L56 44 L32 58 L8 44 L8 18 Z M8 18 L32 30 L56 18 M32 30 L32 58" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="brush" viewBox="0 0 64 64">
+        <path d="M50 6 C56 12 56 20 48 28 L34 42 L22 30 L36 16 C44 8 44 0 50 6 Z"/>
+        <path d="M20 33 L31 44 C28 52 20 58 8 56 C12 50 12 40 20 33 Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="The Pound Keeper, back to top">
+      <span class="brand-tag">
+        <svg class="icon" aria-hidden="true"><use href="#paw"/></svg>
+      </span>
+      <span class="brand-text">POUND<em>KEEPER</em></span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ============ 1. HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <svg class="topo" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M-50,620 C200,560 350,680 600,610 C850,540 1000,660 1250,590"/>
+            <path d="M-50,560 C220,500 380,620 620,550 C860,480 1020,600 1250,530"/>
+            <path d="M-50,500 C240,450 400,560 640,500 C880,440 1040,540 1250,480"/>
+            <path d="M-50,200 C180,260 360,140 600,200 C840,260 1020,150 1250,210"/>
+            <path d="M-50,140 C200,200 380,90 620,150 C860,210 1040,100 1250,160"/>
+            <path d="M-50,80 C220,140 400,40 640,100 C880,160 1060,60 1250,110"/>
+          </g>
+        </svg>
+        <div class="paw-trail">
+          <svg class="icon paw-step p1" aria-hidden="true"><use href="#paw"/></svg>
+          <svg class="icon paw-step p2" aria-hidden="true"><use href="#paw"/></svg>
+          <svg class="icon paw-step p3" aria-hidden="true"><use href="#paw"/></svg>
+          <svg class="icon paw-step p4" aria-hidden="true"><use href="#paw"/></svg>
+          <svg class="icon paw-step p5" aria-hidden="true"><use href="#paw"/></svg>
+        </div>
+      </div>
+
+      <div class="hero-inner">
+        <p class="stamp stamp-orange reveal">SIGNAL ACTIVE &middot; WESTERN MASSACHUSETTS</p>
+        <h1 class="hero-title reveal">The Pound&nbsp;Keeper</h1>
+        <p class="hero-sub reveal">For the strays, the builders, and the ones finding their way home.</p>
+        <p class="hero-copy reveal">
+          I&rsquo;m Patrick Hourihan, a pound keeper, animal advocate, AI builder, and creator.
+          PoundKeeper.com is the home base for the animals, projects, tools, stories,
+          experiments, and strange creative work that make up my world.
+        </p>
+        <div class="hero-ctas reveal">
+          <a class="btn btn-primary" href="#projects">Explore My Projects</a>
+          <a class="btn btn-ghost" href="#about">Who Is The Pound Keeper?</a>
+        </div>
+
+        <div class="terminal reveal" aria-hidden="true">
+          <div class="terminal-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="terminal-title">poundkeeper :: zsh</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-prompt">$</span> poundkeeper --status</p>
+            <p class="t-out">&gt; keeping watch over the strays</p>
+            <p class="t-out">&gt; 3 projects active &middot; more inbound</p>
+            <p class="t-out">&gt; last seen: the woods, after dark<span class="cursor">&#9608;</span></p>
+          </div>
+        </div>
+
+        <p class="hero-tagline mono reveal">LOST PETS &middot; STRANGE TOOLS &middot; SECOND CHANCES</p>
+      </div>
+    </section>
+
+    <!-- ============ 2. ABOUT ============ -->
+    <section class="section about" id="about">
+      <div class="section-head reveal">
+        <span class="stamp">ORIGIN</span>
+        <h2>Who Is The Pound&nbsp;Keeper?</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p class="lede">
+            The Pound Keeper is the part of me that pays attention to what gets lost,
+            overlooked, abandoned, unfinished, or misunderstood. Animals, ideas, people,
+            projects, all of it. This site is where those worlds connect.
+          </p>
+          <p>
+            I keep the pound in a small corner of Western Massachusetts. Lost dogs, stray
+            cats, late calls, cold nights, animals that need somebody to stop and notice
+            them. Somewhere along the way the job became a way of seeing everything else.
+          </p>
+          <p>
+            The same instinct runs through everything I build. <strong>Hike With Cats</strong>
+            started as walks in the woods with a cat and turned into a whole philosophy of
+            slowing down. <strong>My Cartoon Pet</strong> uses AI to turn real pets into
+            clean cartoon art. <strong>Keeping Up With The Robots</strong> helps regular
+            people around here figure out what to do with all this new machinery. None of
+            it was supposed to fit together. All of it does.
+          </p>
+          <p>
+            I know something about second chances because I needed one. I got sober,
+            rebuilt the parts of my life that needed rebuilding, and learned that becoming
+            useful again is its own kind of work. I don&rsquo;t preach about it. It&rsquo;s just in
+            everything now: the animals, the tools, the writing, the watching.
+          </p>
+          <p>
+            If you met me through a solar appointment, an AI meetup, a shelter, a
+            trailhead, or some strange corner of the internet, this is the rest of the
+            picture.
+          </p>
+        </div>
+        <aside class="tag-card reveal" aria-label="Pound Keeper identification tag">
+          <div class="tag-card-hole" aria-hidden="true"></div>
+          <p class="tag-card-title mono">KENNEL TAG &middot; NO. 001</p>
+          <dl class="mono">
+            <div><dt>NAME</dt><dd>PATRICK HOURIHAN</dd></div>
+            <div><dt>CALL SIGN</dt><dd>THE POUND KEEPER</dd></div>
+            <div><dt>TERRITORY</dt><dd>WESTERN MASS WOODS</dd></div>
+            <div><dt>DUTIES</dt><dd>ANIMALS &middot; AI &middot; WRITING</dd></div>
+            <div><dt>STATUS</dt><dd class="status-ok">BUILDING</dd></div>
+            <div><dt>IF FOUND</dt><dd>POINT TOWARD HOME</dd></div>
+          </dl>
+          <div class="tag-card-stamp" aria-hidden="true">ON DUTY</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ 3. PROJECTS ============ -->
+    <section class="section projects" id="projects">
+      <div class="section-head reveal">
+        <span class="stamp stamp-orange">CASE FILES</span>
+        <h2>Explore My Projects</h2>
+        <p class="section-intro">
+          Everything here connects somehow: animals, AI, community, second chances,
+          internet experiments, and the strange little projects that make life feel
+          alive again.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-tab mono"><span>PK-001</span><span class="card-status">ACTIVE</span></div>
+          <div class="card-body">
+            <svg class="card-icon icon" aria-hidden="true"><use href="#cat"/></svg>
+            <h3>Hike With Cats</h3>
+            <p>
+              Adventure cat media, forest therapy, outdoor pet lifestyle, and the
+              reminder to slow down, breathe, and notice the woods.
+            </p>
+            <a class="card-cta" href="https://hikewithcats.com" target="_blank" rel="noopener">Visit Hike With Cats <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-tab mono"><span>PK-002</span><span class="card-status status-pending">LAUNCHING</span></div>
+          <div class="card-body">
+            <svg class="card-icon icon" aria-hidden="true"><use href="#brush"/></svg>
+            <h3>My Cartoon Pet</h3>
+            <p>
+              An AI-powered pet art project that turns real pets into clean cartoon
+              logos, profile images, and merch-ready designs.
+            </p>
+            <!-- Site not live yet. When mycartoonpet.com launches, swap the span below for:
+                 <a class="card-cta" href="https://mycartoonpet.com" target="_blank" rel="noopener">See My Cartoon Pet <span aria-hidden="true">&rarr;</span></a> -->
+            <span class="card-cta card-cta-soon">See My Cartoon Pet &middot; Soon</span>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-tab mono"><span>PK-003</span><span class="card-status">ACTIVE</span></div>
+          <div class="card-body">
+            <svg class="card-icon icon" aria-hidden="true"><use href="#robot"/></svg>
+            <h3>Keeping Up With The Robots</h3>
+            <p>
+              A Western Mass AI community and education project for small business
+              owners, builders, and regular people trying to understand what to do
+              with all these robots.
+            </p>
+            <a class="card-cta" href="https://keepingupwiththerobots.com" target="_blank" rel="noopener">Meet the Robots <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-tab mono"><span>PK-004</span><span class="card-status">ONGOING</span></div>
+          <div class="card-body">
+            <svg class="card-icon icon" aria-hidden="true"><use href="#pen"/></svg>
+            <h3>Pound Keeper Content</h3>
+            <p>
+              Personal writing, animal stories, AI thoughts, sobriety and redemption
+              reflections, project updates, and whatever else does not fit neatly
+              anywhere else.
+            </p>
+            <a class="card-cta" href="#writing">Read More <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="card card-pending reveal">
+          <div class="card-tab mono"><span>PK-005</span><span class="card-status status-pending">PENDING</span></div>
+          <div class="card-body">
+            <svg class="card-icon icon" aria-hidden="true"><use href="#box"/></svg>
+            <h3>Future Strange Projects</h3>
+            <p>
+              A holding place for whatever gets built next: tools, essays, experiments,
+              communities, pet projects, and internet machines that do not fit inside
+              a normal portfolio.
+            </p>
+            <span class="card-cta card-cta-soon">Coming Soon</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ 4. WHY THIS EXISTS ============ -->
+    <section class="section why" id="why">
+      <div class="section-head reveal">
+        <span class="stamp">SIGNAL</span>
+        <h2>Why PoundKeeper.com Exists</h2>
+        <p class="section-intro lede">This is the place everything points back to.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-copy reveal">
+          <p>
+            My life runs through a lot of different rooms: kennels, meetups, trailheads,
+            kitchens with solar paperwork on the table, group chats full of AI builders.
+            Each room only sees one piece. This site holds the whole thing, so whoever
+            you are and however you found me, you can see what I&rsquo;m actually about.
+          </p>
+          <p>
+            One address. Every road leads back here.
+          </p>
+        </div>
+        <ul class="why-list reveal">
+          <li><span class="mono why-key">SOLAR</span> See there&rsquo;s a real person behind the appointment.</li>
+          <li><span class="mono why-key">AI MEETUPS</span> See the projects and what they&rsquo;re built from.</li>
+          <li><span class="mono why-key">ANIMAL PEOPLE</span> Connect with the Pound Keeper identity.</li>
+          <li><span class="mono why-key">HIKE WITH CATS</span> Discover the bigger universe behind the cats.</li>
+          <li><span class="mono why-key">FUTURE ALLIES</span> Clients, collaborators, employers, investors: see that interesting things get built here.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 5. THE BIGGER UNIVERSE ============ -->
+    <section class="section universe" id="universe">
+      <div class="section-head reveal">
+        <span class="stamp">SECTOR MAP</span>
+        <h2>The Bigger Universe</h2>
+        <p class="section-intro">Four territories. One keeper. Everything on this map connects.</p>
+      </div>
+
+      <div class="universe-board reveal">
+        <svg class="constellation" viewBox="0 0 800 520" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <g class="c-lines" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 6">
+            <path d="M400,260 L160,110"/>
+            <path d="M400,260 L640,110"/>
+            <path d="M400,260 L160,410"/>
+            <path d="M400,260 L640,410"/>
+          </g>
+          <g class="c-stars" fill="currentColor">
+            <circle cx="400" cy="260" r="5"/>
+            <circle cx="160" cy="110" r="3"/>
+            <circle cx="640" cy="110" r="3"/>
+            <circle cx="160" cy="410" r="3"/>
+            <circle cx="640" cy="410" r="3"/>
+            <circle cx="90" cy="250" r="1.5"/>
+            <circle cx="300" cy="70" r="1.5"/>
+            <circle cx="520" cy="480" r="1.5"/>
+            <circle cx="710" cy="260" r="1.5"/>
+            <circle cx="260" cy="470" r="1.5"/>
+            <circle cx="560" cy="50" r="1.5"/>
+          </g>
+        </svg>
+
+        <div class="universe-center mono" aria-hidden="true">POUNDKEEPER.COM</div>
+
+        <div class="universe-grid">
+          <article class="sector reveal">
+            <h3 class="mono"><span class="sector-dot"></span>ANIMALS</h3>
+            <p>
+              Pound keeper work, animal advocacy, shelter-adjacent work, Hike With Cats,
+              lost pets, rescue stories, and pet content.
+            </p>
+          </article>
+          <article class="sector reveal">
+            <h3 class="mono"><span class="sector-dot"></span>AI</h3>
+            <p>
+              My Cartoon Pet, Keeping Up With The Robots, AI tools, app building,
+              small business AI education, and creative experiments.
+            </p>
+          </article>
+          <article class="sector reveal">
+            <h3 class="mono"><span class="sector-dot sector-dot-orange"></span>SECOND CHANCES</h3>
+            <p>
+              Sobriety, redemption, rebuilding, discipline, becoming useful again,
+              and building a life with meaning.
+            </p>
+          </article>
+          <article class="sector reveal">
+            <h3 class="mono"><span class="sector-dot"></span>CREATIVE PROJECTS</h3>
+            <p>
+              Blogs, essays, tools, communities, future brands, strange internet
+              experiments, and whatever gets built next.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. WRITING ============ -->
+    <section class="section writing" id="writing">
+      <div class="section-head reveal">
+        <span class="stamp">ARCHIVE</span>
+        <h2>Writing</h2>
+        <p class="section-intro">
+          Thoughts on animals, AI, second chances, creative work, and the strange
+          little projects that keep pulling me forward.
+        </p>
+      </div>
+
+      <ul class="post-list">
+        <li class="post reveal">
+          <span class="post-num mono">01</span>
+          <div class="post-main">
+            <h3>Lost Pets, Strange Tools, Second Chances</h3>
+            <span class="post-cat mono">PROJECTS</span>
+          </div>
+          <span class="post-soon mono">SOON</span>
+        </li>
+        <li class="post reveal">
+          <span class="post-num mono">02</span>
+          <div class="post-main">
+            <h3>Why I Started Keeping Up With The Robots</h3>
+            <span class="post-cat mono">KEEPING UP WITH THE ROBOTS</span>
+          </div>
+          <span class="post-soon mono">SOON</span>
+        </li>
+        <li class="post reveal">
+          <span class="post-num mono">03</span>
+          <div class="post-main">
+            <h3>Building AI Tools for Pet People</h3>
+            <span class="post-cat mono">MY CARTOON PET</span>
+          </div>
+          <span class="post-soon mono">SOON</span>
+        </li>
+        <li class="post reveal">
+          <span class="post-num mono">04</span>
+          <div class="post-main">
+            <h3>What Animal Work Teaches You About People</h3>
+            <span class="post-cat mono">ANIMALS</span>
+          </div>
+          <span class="post-soon mono">SOON</span>
+        </li>
+        <li class="post reveal">
+          <span class="post-num mono">05</span>
+          <div class="post-main">
+            <h3>The Internet Is Full of Strays</h3>
+            <span class="post-cat mono">WEIRD INTERNET</span>
+          </div>
+          <span class="post-soon mono">SOON</span>
+        </li>
+        <li class="post reveal">
+          <span class="post-num mono">06</span>
+          <div class="post-main">
+            <h3>Becoming Useful Again</h3>
+            <span class="post-cat mono">SOBRIETY AND REBUILDING</span>
+          </div>
+          <span class="post-soon mono">SOON</span>
+        </li>
+      </ul>
+
+      <div class="cat-chips reveal" aria-label="Writing categories">
+        <span class="chip mono">ANIMALS</span>
+        <span class="chip mono">AI</span>
+        <span class="chip mono">PROJECTS</span>
+        <span class="chip mono">SOBRIETY AND REBUILDING</span>
+        <span class="chip mono">HIKE WITH CATS</span>
+        <span class="chip mono">MY CARTOON PET</span>
+        <span class="chip mono">KEEPING UP WITH THE ROBOTS</span>
+        <span class="chip mono">WEIRD INTERNET</span>
+      </div>
+    </section>
+
+    <!-- ============ 7. CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="contact-box reveal">
+        <span class="stamp stamp-orange">CONTACT</span>
+        <h2>Want to build something weird?</h2>
+        <p>
+          Reach out about AI projects, animal-related ideas, writing, collaborations,
+          community events, creative work, or strange internet experiments.
+        </p>
+        <a class="btn btn-primary" href="mailto:hikewithcats@gmail.com?subject=Found%20you%20through%20PoundKeeper.com">Contact Patrick</a>
+        <p class="contact-note mono">&gt; response time varies. something might be loose in the woods.<span class="cursor">&#9608;</span></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ 8. FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-tag">
+          <svg class="icon" aria-hidden="true"><use href="#paw"/></svg>
+        </span>
+        <p class="brand-text">POUND<em>KEEPER</em></p>
+        <p class="footer-tagline">For the strays, the builders, and the ones finding their way home.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer site navigation">
+        <p class="mono footer-label">SITE</p>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <nav class="footer-nav" aria-label="Footer project links">
+        <p class="mono footer-label">PROJECTS</p>
+        <a href="https://hikewithcats.com" target="_blank" rel="noopener">Hike With Cats</a>
+        <!-- Swap href to https://mycartoonpet.com when the site launches -->
+        <a href="#projects">My Cartoon Pet</a>
+        <a href="https://keepingupwiththerobots.com" target="_blank" rel="noopener">Keeping Up With The Robots</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        PoundKeeper.com is Patrick Hourihan&rsquo;s personal site. It is not an official
+        municipal animal-control website. For emergencies or official animal-control
+        requests, contact your local police department, town office, or emergency
+        services.
+      </p>
+      <p class="mono footer-copy">&copy; 2026 PATRICK HOURIHAN &middot; KEEPING WATCH</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
